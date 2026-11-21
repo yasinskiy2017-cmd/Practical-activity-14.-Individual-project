@@ -1,0 +1,25 @@
+# Terraform
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/*.tfstate
+infra/*.tfstate.*
+infra/*.tfvars
+!infra/terraform.tfvars.example
+
+# Secrets & keys
+*.pem
+*.key
+*.pub
+.env
+.env.*
+!.env.example
+
+# Python & IDE
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
