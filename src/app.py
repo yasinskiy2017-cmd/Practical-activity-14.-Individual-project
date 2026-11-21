@@ -1,6 +1,6 @@
 import os
 from datetime import datetime, timezone
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, redirect, request
 import requests
 
 app = Flask(__name__)
@@ -8,6 +8,11 @@ app = Flask(__name__)
 APP_ENV = os.getenv("APP_ENV", "local")
 DEFAULT_TARGET = os.getenv("TARGET_URL", "https://httpbin.org/get")
 CHECKS_LOG = []
+
+
+@app.get("/")
+def index():
+    return redirect("/health")
 
 
 @app.get("/health")
